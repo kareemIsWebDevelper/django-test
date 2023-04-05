@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>register page</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            {{ form.as_p }}
+            <select name="account_type">
+                <option name="company" selected>Company</option>
+                <option name="person">Person</option>
+            </select>
+            <button type="submit">Sign Up</button>
+        </div>
+    </form>
+{% endblock %}
